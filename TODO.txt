@@ -1,0 +1,20 @@
+- Realizzare una versione che legge da un file chiaato dati.txt
+    il file del path di lettura della cartella con tutti i dati
+    il file del path di scrittura dei vari files
+    il modello della password
+    il nome file per 
+	l'elenco degli insegnanti (non so se la privacy lo consente)
+    	l'elenco dei computers dell'aula informatica
+    	l'elenco dei computers delle classi
+    	l'elenco degli altri computer 
+            (segreteria, ufficio di Marina e Vincenzo, studio insegnanti)
+    
+- L'interfaccia grafica sarà realizzata con Pygame
+    Ci sarà un'animazione di 4 o più scritte che chiederanno di scegliere tra
+        1) password singola (genera un file singolo)
+	2) password computer classi (elenco di password con id computer e pass)
+	3) password computer aula info
+	4) password computer aula insegnanti, uffici
+
+- Il programma deve generare i files di testo con il formato della data
+    yyyy-mm-dd - nome file.txt
