@@ -1,0 +1,13 @@
+AAA_aaa_33!
+dati/lista_pc_classi.txt
+dati/lista_maestri.txt
+dati/
+
+
+
+
+###########
+Questo file verrà trasformato in una lista
+dalla quale verranno estratte diverse informazioni:
+lista_dati[0] sarà il modello della password
+lista_dati[1] sarà il percorso di lettura
