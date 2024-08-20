@@ -1,0 +1,13 @@
+Classe 1A
+Classe 1B
+Classe 2A
+Classe 2B
+Classe 3A
+Classe 3B
+Classe 4A
+Classe 4B
+Classe 5A
+Classe 5B
+Classe M1
+Classe M2
+Classe M3
