@@ -9,10 +9,12 @@ import message
 
 
 pygame.init()
-w_width = 800
+w_width = 900
 w_height = 500
 
 screen = pygame.display.set_mode((w_width, w_height))
+bg_img = pygame.image.load("images/bg_img.jpg")
+bg_img = pygame.transform.scale(bg_img, (w_width, w_height))
 pygame.display.set_caption("Password generator")
 clock = pygame.time.Clock()
 
@@ -158,8 +160,11 @@ while gameloop:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 gameloop = False
-    screen.fill((255, 255, 255))
 
+    # screen.fill((255, 255, 255))
+    
+    screen.blit(bg_img, (-10, -10))
+    
     messaggio1.draw_text(screen)
     messaggio2.draw_text(screen)
     messaggio3.draw_text(screen)

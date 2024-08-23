@@ -11,11 +11,11 @@ class Message():
         
         self.font = pygame.font.SysFont("Arial", 42)
         self.font.set_bold(True)
-        self.font_color = (0, 250, 250)
+        self.font_color = (0, 25, 25)
 
     def draw_text(self, screen):
         # muovo il testo verso destra
-        if self.x < 10:
+        if self.x < 95:
             self.x += 3
 
         self.banner = self.font.render(self.testo, True, self.font_color)
