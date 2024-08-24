@@ -148,8 +148,8 @@ text1 = "[1] Crea una sola password"
 text2 = "[2] Crea la lista di passwords per gli insegnanti"
 text3 = "[3] Crea la lista di passwords per l'aula di informatica"
 text4 = "[4] Crea la lista di passwords per i PC delle classi"
-text5 = "[5] Crea la lista di passowrds per gli altri PC"
-text56= "[ESC] Esci dal programma"
+text5 = "[5] Crea la lista di passowords per gli altri PC"
+text6= "[ESC] Esci dal programma"
 
 
 messaggio1 = message.Message(text1, -500, 10, 500, 50)
@@ -157,6 +157,7 @@ messaggio2 = message.Message(text2, -500, 60, 500, 50)
 messaggio3 = message.Message(text3, -500, 110, 500, 50)
 messaggio4 = message.Message(text4, -500, 160, 500, 50)
 messaggio5 = message.Message(text5, -500, 210, 500, 50)
+messaggio6 = message.Message(text6, -500, 310, 500, 50)
 
 # button_rect_1 = messaggio1.get_rect()
 # button_rect_2 = messaggio2.get_rect()
@@ -194,6 +195,7 @@ while gameloop:
     messaggio3.draw_text(screen)
     messaggio4.draw_text(screen)
     messaggio5.draw_text(screen)
+    messaggio6.draw_text(screen)
     
 
     pygame.display.update()
