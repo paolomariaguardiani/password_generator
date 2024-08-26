@@ -7,6 +7,9 @@ from pathlib import Path
 
 import message
 import set_time
+import read_file
+import generator
+
 
 
 # prova di set_time
@@ -27,47 +30,52 @@ bg_img = pygame.transform.scale(bg_img, (w_width, w_height))
 pygame.display.set_caption("Password generator")
 clock = pygame.time.Clock()
 
-anno = time.strftime('%Y')
-mese = time.strftime('%m')
-if len(mese) == 1: # se il mese è 8 diventa 08
-    mese = "0" + mese
-giorno = time.strftime('%d')
+# anno = time.strftime('%Y')
+# mese = time.strftime('%m')
+# if len(mese) == 1: # se il mese è 8 diventa 08
+#     mese = "0" + mese
+# giorno = time.strftime('%d')
 
-data_odierna = f"{anno}-{mese}-{giorno}"
+# data_odierna = f"{anno}-{mese}-{giorno}"
 
 # modello_password = "AAA_aaa_33!"
-modello_password = ""
+# modello_password = ""
 
 
-lista_minuscole = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
-                   "j", "k", "l", "m", "n", "o", "p", "q", "r",
-                   "s", "t", "u", "v", "W", "x", "y", "z"]
+# lista_minuscole = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
+#                    "j", "k", "l", "m", "n", "o", "p", "q", "r",
+#                    "s", "t", "u", "v", "W", "x", "y", "z"]
 
-lista_maiuscole = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
-                   "J", "K", "L", "M", "N", "O", "P", "Q", "R",
-                   "S", "T", "U", "V", "W", "X", "Y", "Z"]
+# lista_maiuscole = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
+#                    "J", "K", "L", "M", "N", "O", "P", "Q", "R",
+#                    "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-lista_numeri = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+# lista_numeri = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-lista_simboli = ["!", "#"]
+# lista_simboli = ["!", "#"]
 
-lista_pc_classi = []
-lista_maestri = []
-lista_dati = []
+# lista_pc_classi = []
+# lista_maestri = []
+# lista_dati = []
 
 #####
 # Funzione per leggere l'elenco di utenti e pc da un file di testo
-def read_file_txt(percorso):
-    path = Path(percorso)
-    contents = path.read_text()
-    lista = contents.splitlines()
-    return lista
+# def read_file_txt(percorso):
+#     path = Path(percorso)
+#     contents = path.read_text()
+#     lista = contents.splitlines()
+#     return lista
 
-lista_pc_classi = read_file_txt("dati/lista_pc_classi.txt")
-lista_maestri = read_file_txt("dati/lista_maestri.txt")
-lista_dati = read_file_txt("dati/dati_importanti.txt")
-modello_password = lista_dati[0]
-percorso_di_scrittura = lista_dati[3]
+# lista_pc_classi = read_file_txt("dati/lista_pc_classi.txt")
+# lista_maestri = read_file_txt("dati/lista_maestri.txt")
+# lista_dati = read_file_txt("dati/dati_importanti.txt")
+# modello_password = lista_dati[0]
+# percorso_di_scrittura = lista_dati[3]
+
+rf = read_file.ReadFile()
+
+# print(rf.modello_password)
+# print(rf.lista_dati)
 
 #####
 # Prima versione del metodo random string
@@ -87,40 +95,41 @@ percorso_di_scrittura = lista_dati[3]
 #####
 # Seconda versione del metodo random_string
 
-def random_string_2(modello):
-    temp_list = []
-    for char in modello:
-        if char == "a":
-            temp_list.append(lista_minuscole[random.randint(0, len(lista_minuscole) - 1)])
-        elif char == "A":
-            temp_list.append(lista_maiuscole[random.randint(0, len(lista_maiuscole) - 1)])
-        elif char == "3":
-            temp_list.append(lista_numeri[random.randint(0, len(lista_numeri) - 1)])
-        elif char == "!":
-            temp_list.append(lista_simboli[random.randint(0, len(lista_simboli) -1)])
-        elif char == "_":
-            temp_list.append("_")
-    password = "".join(temp_list)
-    return password
+# def random_string_2(modello):
+#     temp_list = []
+#     for char in modello:
+#         if char == "a":
+#             temp_list.append(lista_minuscole[random.randint(0, len(lista_minuscole) - 1)])
+#         elif char == "A":
+#             temp_list.append(lista_maiuscole[random.randint(0, len(lista_maiuscole) - 1)])
+#         elif char == "3":
+#             temp_list.append(lista_numeri[random.randint(0, len(lista_numeri) - 1)])
+#         elif char == "!":
+#             temp_list.append(lista_simboli[random.randint(0, len(lista_simboli) -1)])
+#         elif char == "_":
+#             temp_list.append("_")
+#     password = "".join(temp_list)
+#     return password
 
 
 #####
 # Metodo per generare una password assolutamente casuale
 
 
-def shuffle_string(stringa):
-    temp_list = list(stringa)
-    # Mescolo la lista
-    random.shuffle(temp_list)
-    return "".join(temp_list)
+# def shuffle_string(stringa):
+#     temp_list = list(stringa)
+#     # Mescolo la lista
+#     random.shuffle(temp_list)
+#     return "".join(temp_list)
 
+generate_password = generator.Generator()
 
 def write_file_txt(nome_file, lista):
     path = Path(nome_file) # verrà salvato nella stessa directory del programma.exe
-    
-    content = f"Passwords generate in data: {data_odierna}\n\n"
+    content = ""
+    # content = f"Passwords generate in data: {data_odierna}\n\n"
     for element in lista:
-        password = random_string_2(modello_password)
+        password = generate_password.generate_simple_password()
         numero_puntini = 35 - len(element)
         content += f"{element} {numero_puntini * "."} {password}\n\n"
 
@@ -129,10 +138,11 @@ def write_file_txt(nome_file, lista):
 def write_difficult_passwords(nome_file, lista):
     path = Path(nome_file) # verrà salvato nella stessa directory del programma.exe
     
-    content = f"Passwords generate in data: {data_odierna}\n\n"
+    content = ""
+    # content = f"Passwords generate in data: {data_odierna}\n\n"
     for element in lista:
-        password = random_string_2(modello_password)
-        password = shuffle_string(password)
+        password = generate_password.generate_simple_password()
+        password = generate_password.shuffle_string(password)
         numero_puntini = 35 - len(element)
         content += f"{element} {numero_puntini * "."} {password}\n\n"
 
@@ -177,8 +187,10 @@ while gameloop:
                 print("1")
             elif event.key == pygame.K_2 or event.key == pygame.K_KP_2:
                 print("2")
+                write_file_txt("ciao.txt", rf.lista_pc_classi)
             elif event.key == pygame.K_3 or event.key == pygame.K_KP_3:
                 print("3")
+                write_difficult_passwords("ciao2.txt", rf.lista_maestri)
             elif event.key == pygame.K_4 or event.key == pygame.K_KP_4:
                 print("4")
             elif event.key == pygame.K_5 or event.key == pygame.K_KP_5:
