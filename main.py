@@ -131,7 +131,7 @@ def write_file_txt(nome_file, lista):
     for element in lista:
         password = generate_password.generate_simple_password()
         numero_puntini = 35 - len(element)
-        content += f"{element} {numero_puntini * "."} {password}\n\n"
+        content += f"{element} {numero_puntini * '.'} {password}\n\n"
 
     path.write_text(content) # write the file and close it!!!
     
@@ -145,7 +145,7 @@ def write_difficult_passwords(nome_file, lista):
         password = generate_password.generate_simple_password()
         password = generate_password.shuffle_string(password)
         numero_puntini = 35 - len(element)
-        content += f"{element} {numero_puntini * "."} {password}\n\n"
+        content += f"{element} {numero_puntini * '.'} {password}\n\n"
 
     path.write_text(content)
 
