@@ -18,3 +18,5 @@
 
 - Il programma deve generare i files di testo con il formato della data
     yyyy-mm-dd - nome file.txt
+
+- Realizzare la classe Write_file()

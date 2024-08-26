@@ -13,6 +13,6 @@ class ReadFile():
 
     def read_file_txt(self, percorso):
         path = Path(percorso)
-        contents = path.read_text()
+        contents = path.read_text() # read the file and close it!
         lista = contents.splitlines()
         return lista

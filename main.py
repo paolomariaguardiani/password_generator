@@ -133,7 +133,8 @@ def write_file_txt(nome_file, lista):
         numero_puntini = 35 - len(element)
         content += f"{element} {numero_puntini * "."} {password}\n\n"
 
-    path.write_text(content)
+    path.write_text(content) # write the file and close it!!!
+    
 
 def write_difficult_passwords(nome_file, lista):
     path = Path(nome_file) # verrà salvato nella stessa directory del programma.exe
