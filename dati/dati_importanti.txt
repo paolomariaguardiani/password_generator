@@ -9,5 +9,5 @@ dati/
 ###########
 Questo file verrà trasformato in una lista
 dalla quale verranno estratte diverse informazioni:
-lista_dati[0] sarà il modello della password
-lista_dati[1] sarà il percorso di lettura
+lista_dati[0] è il modello della password
+lista_dati[1] sarà magari un percorso di lettura

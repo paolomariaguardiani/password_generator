@@ -8,7 +8,6 @@ class ReadFile():
         
         self.lista_pc_classi = self.read_file_txt("dati/lista_pc_classi.txt")
         self.lista_maestri = self.read_file_txt("dati/lista_maestri.txt")
-        self.lista_dati = self.read_file_txt("dati/dati_importanti.txt")
 
 
     def read_file_txt(self, percorso):
