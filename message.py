@@ -9,8 +9,9 @@ class Message():
         self.width = width
         self.height = height
         
-        self.font = pygame.font.SysFont("Arial", 42)
-        self.font.set_bold(True)
+        # self.font = pygame.font.SysFont("arial", 42, 1, 1) # 1, 1 = bold and italic
+        self.font = pygame.font.SysFont("helvetica", 42, 1, 0)
+        # self.font.set_bold(True)
         self.font_color = (0, 25, 25)
 
     def draw_text(self, screen):

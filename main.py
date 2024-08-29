@@ -22,8 +22,8 @@ dot_printer_1 = pygame.mixer.Sound("sounds/dot_printer_1.wav")
 dot_printer_2 = pygame.mixer.Sound("sounds/dot_printer_2.wav")
 
 
-w_width = 920
-w_height = 500
+w_width = 1000
+w_height = 700
 
 screen = pygame.display.set_mode((w_width, w_height))
 bg_img = pygame.image.load("images/bg_img.jpg")
