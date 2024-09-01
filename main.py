@@ -32,13 +32,8 @@ pygame.display.set_caption("Password generator")
 clock = pygame.time.Clock()
 
 
-
-
-
-
 rf = read_file.ReadFile()
 wf = write_file.WriteFile()
-
 
 
 generate_password = generator.Generator()
@@ -110,3 +105,5 @@ while gameloop:
     
 
     pygame.display.update()
+
+pygame.quit()
